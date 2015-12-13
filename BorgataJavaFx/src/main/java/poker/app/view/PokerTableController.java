@@ -274,7 +274,8 @@ public class PokerTableController {
 		hs = GameRuleBLL.getRuleHashSet();		
 		GameRuleDomainModel gr = hs.get(strRuleName);
 		
-		
+		//add
+		rle = new Rule(eGame.values()[hs.get(strRuleName).getRULEID()]);
 		
 		//tglGame = mainApp.getToggleGroup();
 		
@@ -334,6 +335,9 @@ public class PokerTableController {
 		iCardDrawnCommon = 0;
 
 	}
+	
+	
+	
 
 	public void DealFaceDownCards(int nbrOfCards, int iPlayerPosition) {
 		HBox PlayerCardBox = null;
@@ -368,6 +372,15 @@ public class PokerTableController {
 
 	@FXML
 	private void handleDraw() {
+		// add
+		String strRuleName = mainApp.getRuleName();
+		HashMap<String, GameRuleDomainModel> hs = new HashMap();
+		hs = GameRuleBLL.getRuleHashSet();		
+		GameRuleDomainModel gr = hs.get(strRuleName);
+		
+		//add 
+		rle = new Rule(eGame.values()[hs.get(strRuleName).getRULEID()]);
+				
 		iCardDrawn++;
 		iDrawCount++;
 		ImageView imView = null;

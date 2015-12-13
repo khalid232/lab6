@@ -150,7 +150,6 @@ public class MainApp extends Application {
 		ToggleGroup tgl = rootController.getTglGames();
 		return tgl;
 		
-
 	}*/
 	
 	public String getRuleName()
